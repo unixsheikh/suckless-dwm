@@ -65,7 +65,7 @@ static const char *clawsmailcmd[]  = { "claws-mail", NULL };
 static const char *hexchatcmd[]  = { "hexchat", NULL };
 static const char *filezillacmd[]  = { "filezilla", NULL };
 static const char *screenshotcmd[]  = { "gnome-screenshot", "-i" };
-static const char *lockscreencmd[]  = { "i3lock", "-i", "~/lock-image.png"};
+static const char *lockscreencmd[]  = { "i3lock", "-i", ".lock-image.png"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
