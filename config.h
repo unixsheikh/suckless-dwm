@@ -71,11 +71,11 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 
     /* Modified key mappings */
-	{ MODKEY,                       XK_Return, spawn,          {.v = xtermcmd } },
-    { MODKEY,                       XK_BackSpace, spawn,       {.v = stcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = xtermcmd } },
+    { MODKEY|ShiftMask,             XK_BackSpace, spawn,       {.v = stcmd } },
     { MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Up,     focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_Escape,    quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_Escape, quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
     { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
     { MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clawsmailcmd } },
