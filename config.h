@@ -5,6 +5,7 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int minwsz    = 20;        /* Minimal heigt of a client for smfact */
 static const char *fonts[]          = { "Liberation mono:size=8" };
 static const char dmenufont[]       = "Liberation mono:size=8";
 static const char col_gray1[]       = "#1e1e1e";
@@ -33,6 +34,7 @@ static const Rule rules[] = {
 
 /* layout(s) */
 static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
+static const float smfact    = 0.00; /* factor of tiled clients [0.00..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -82,7 +84,11 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_x,      spawn,          {.v = hexchatcmd } },
     { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = filezillacmd } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
-    { MODKEY|ControlMask,           XK_l,      spawn,          {.v = lockscreencmd } },
+    { MODKEY,                       XK_F1,     spawn,          {.v = lockscreencmd } },
+    { MODKEY|ControlMask,           XK_k,      setsmfact,      {.f = +0.05} },
+    { MODKEY|ControlMask,           XK_j,      setsmfact,      {.f = -0.05} },
+    { MODKEY|ControlMask,           XK_Up,     setsmfact,      {.f = +0.05} },
+    { MODKEY|ControlMask,           XK_Down,   setsmfact,      {.f = -0.05} },
 
     /* Default key mappings */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
