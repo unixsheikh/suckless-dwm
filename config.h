@@ -74,8 +74,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 
     /* Modified key mappings */
+	{ MODKEY,                       XK_x, spawn, 		       {.v = xtermcmd } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = alacrittycmd } },
-	{ MODKEY|ShiftMask,             XK_a, spawn, 		       {.v = xtermcmd } },
     { MODKEY|ShiftMask,             XK_BackSpace, spawn,       {.v = stcmd } },
     { MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Up,     focusstack,     {.i = -1 } },
@@ -83,7 +83,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
     { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefoxcmd } },
     { MODKEY|ShiftMask,             XK_c,      spawn,          {.v = clawsmailcmd } },
-    { MODKEY|ShiftMask,             XK_x,      spawn,          {.v = hexchatcmd } },
+    { MODKEY|ShiftMask,             XK_a,      spawn,          {.v = hexchatcmd } },
     { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = filezillacmd } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
     { MODKEY,                       XK_F1,     spawn,          {.v = lockscreencmd } },
