@@ -62,6 +62,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 // static const char *termcmd[]  = { "st", NULL };
 static const char *xtermcmd[]  = { "xterm", NULL };
 static const char *stcmd[]  = { "st", "-e", "tmux" };
+static const char *alacrittycmd[]  = { "alacritty", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *clawsmailcmd[]  = { "claws-mail", NULL };
 static const char *hexchatcmd[]  = { "hexchat", NULL };
@@ -73,7 +74,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 
     /* Modified key mappings */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = xtermcmd } },
+    { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = alacrittycmd } },
+	{ MODKEY|ShiftMask,             XK_a, spawn, 		       {.v = xtermcmd } },
     { MODKEY|ShiftMask,             XK_BackSpace, spawn,       {.v = stcmd } },
     { MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Up,     focusstack,     {.i = -1 } },
@@ -85,6 +87,8 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_z,      spawn,          {.v = filezillacmd } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotcmd } },
     { MODKEY,                       XK_F1,     spawn,          {.v = lockscreencmd } },
+    { MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
     { MODKEY|ControlMask,           XK_k,      setsmfact,      {.f = +0.05} },
     { MODKEY|ControlMask,           XK_j,      setsmfact,      {.f = -0.05} },
     { MODKEY|ControlMask,           XK_Up,     setsmfact,      {.f = +0.05} },
